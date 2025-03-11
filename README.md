@@ -5,4 +5,6 @@
 
 ### How to Run
 
-- open console -> venv\Scripts\activate
+- open console -> open project folder -> venv\Scripts\activate
+- open http://localhost:8000/books
+- open POSTMAN

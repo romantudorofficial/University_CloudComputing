@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "Retrieve Book by ID",
+			"name": "Retrieve a Book by ID",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -113,7 +113,7 @@
 			"response": []
 		},
 		{
-			"name": "Update a Book",
+			"name": "Update a Book by ID",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -176,7 +176,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete a Book",
+			"name": "Delete a Book by ID",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -199,7 +199,7 @@
 			"response": []
 		},
 		{
-			"name": "Remove All Books",
+			"name": "Delete All Books",
 			"request": {
 				"auth": {
 					"type": "noauth"

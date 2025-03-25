@@ -1,30 +1,39 @@
 <template>
   <div id="app">
-    <h1>Library of Books</h1>
-    <div v-if="booksError" class="error">{{ booksError }}</div>
-    <ul v-else>
-      <li v-for="book in books" :key="book.id">
-        <strong>{{ book.title }}</strong> by {{ book.author }}
-        <!-- Optionally, add a button to fetch author info -->
-        <button @click="fetchAuthorInfo(book.author)">Show Author Info</button>
-      </li>
-    </ul>
+    <header class="header">
+      <h1>Library of Books</h1>
+    </header>
 
-    <div v-if="authorInfo">
+    <section class="books-section">
+      <h2>Books Collection</h2>
+      <div v-if="booksError" class="error">{{ booksError }}</div>
+      <ul class="book-list" v-else>
+        <li class="book-item" v-for="book in books" :key="book.id">
+          <div class="book-info">
+            <strong>{{ book.title }}</strong>
+            <span class="by">by</span>
+            <span class="author">{{ book.author }}</span>
+          </div>
+          <button class="info-btn" @click="fetchAuthorInfo(book.author)">Show Author Info</button>
+        </li>
+      </ul>
+    </section>
+
+    <section class="author-section" v-if="authorInfo">
       <h2>Author Info</h2>
       <p>{{ authorInfo.extract }}</p>
-    </div>
+    </section>
 
     <hr />
 
-    <div>
-      <h1>Current Weather (London)</h1>
+    <section class="weather-section">
+      <h2>Current Weather (London)</h2>
       <div v-if="weatherError" class="error">{{ weatherError }}</div>
-      <div v-else-if="weather">
-        <p>Temperature: {{ weather.current_weather.temperature }}°C</p>
-        <p>Wind Speed: {{ weather.current_weather.windspeed }} km/h</p>
+      <div v-else-if="weather" class="weather-info">
+        <p><span class="label">Temperature:</span> {{ weather.current_weather.temperature }}°C</p>
+        <p><span class="label">Wind Speed:</span> {{ weather.current_weather.windspeed }} km/h</p>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -80,8 +89,111 @@ export default {
 }
 </script>
 
-<style>
-#error {
-  color: red;
+<style scoped>
+/* Overall container styling */
+#app {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header styling */
+.header {
+  text-align: center;
+  padding: 15px 0;
+  background: #2c3e50;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Section headings */
+.books-section, .author-section, .weather-section {
+  margin-top: 30px;
+}
+
+h2 {
+  color: #34495e;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+/* Books list styling */
+.book-list {
+  list-style: none;
+  padding: 0;
+}
+
+.book-item {
+  background: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.book-item:hover {
+  transform: translateY(-3px);
+}
+
+.book-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.book-info .by {
+  color: #7f8c8d;
+}
+
+.info-btn {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.info-btn:hover {
+  background: #2980b9;
+}
+
+/* Error message styling */
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Weather section styling */
+.weather-info p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Horizontal rule styling */
+hr {
+  border: none;
+  height: 1px;
+  background: #ddd;
+  margin: 30px 0;
 }
 </style>

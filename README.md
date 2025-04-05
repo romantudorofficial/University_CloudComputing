@@ -32,6 +32,24 @@
 - maximum 2 can be Google Cloud API
 - description of project: webpage which show famous YouTube videos and their description in many languages
 
+- Important Details:
+
+    - MySQL:
+
+        - instance: homework3-db
+        - password: homework3-db
+        - databases:
+            - videosite
+        - users:
+            - username: flaskuser
+            - password: flaskuser
+        - public ip address:
+            - 34.118.52.224
+
+    - Project ID:
+
+        - proiect-cloudcomputing
+
 - technologies used:
 
     - backend:
@@ -47,14 +65,14 @@
 
         - general:
 
-            - [Cloud SQL (Database Service)](https://console.cloud.google.com/sql/choose-instance-engine?invt=Abt9Bg&project=proiect-cloudcomputing)
+            - [Cloud SQL (Database Service - MySQL)](https://console.cloud.google.com/sql/choose-instance-engine?invt=Abt9Bg&project=proiect-cloudcomputing)
             - [Cloud Run (Backend Service, Deployment)](https://console.cloud.google.com/run?invt=Abt8_w&project=proiect-cloudcomputing)
             - [Firebase Hosting (Frontend Service)](https://console.cloud.google.com/firebase?invt=Abt9vw&project=proiect-cloudcomputing)
         
         - APIs:
 
-            - [Cloud Translation API](https://console.cloud.google.com/apis/library/translate.googleapis.com?invt=Abt9DA&project=skilled-mile-455515-t8) - translation
-            - [YouTube API](https://console.cloud.google.com/apis/library/youtube.googleapis.com?invt=Abt9HA&project=skilled-mile-455515-t8) - YouTube video insertion
+            - [Cloud Translation API (Translation)](https://console.cloud.google.com/apis/library/translate.googleapis.com?invt=Abt9DA&project=skilled-mile-455515-t8)
+            - [YouTube API (YouTube Video Insertion)](https://console.cloud.google.com/apis/library/youtube.googleapis.com?invt=Abt9HA&project=skilled-mile-455515-t8)
 
 
 ### How to Set Up
@@ -63,10 +81,43 @@
 - install Python and pip
 - install Google Cloud CLI, enter the consolde and sign in into the Google account
 - install Firebase CLI: npm install -g firebase-tools
+- make a Docker account and install Docker Desktop
+- move to folder homework_3/backend and run in the terminal:
+    - python -m venv venv
+    - venv\Scripts\activate
+    - pip install flask
+    - pip install -r requirements.txt
+    - docker build -t flask-backend .
+    - docker run -p 5000:8080 flask-backend
+    - open http://localhost:5000/
+- move to folder homework_3/frontend and run in the terminal:
+    - vue create .
+    - npm run serve
+    - open http://localhost:8081/
+- go to https://console.cloud.google.com/sql
+- move to folder homework_3/frontend and run in the terminal:
+    - firebase login
+    - firebase init hosting
+    - npm run build
+- move to backend:
+    - gcloud builds submit --tag gcr.io/proiect-cloudcomputing/flask-app
+    - gcloud run deploy flask-app --image gcr.io/proiect-cloudcomputing/flask-app --platform managed --region us-central1 --allow-unauthenticated
+    - open https://flask-app-460494010492.us-central1.run.app
+- move to frontend:
+    - firebase deploy --only hosting
+    - open https://proiect-cloudcomputing.web.app
+- move to backend:
+    - gcloud app deploy
+    - open https://proiect-cloudcomputing.lm.r.appspot.com
 
 ### How to Run
 
-- 
+- go to homework_3/backend and run:
+    - venv\Scripts\activate
+    - docker run -p 5000:8080 flask-backend
+    - open http://localhost:5000/
+- go to homework_3/frontend and run:
+    - npm run serve
 
 
 ### To Do

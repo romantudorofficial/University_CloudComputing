@@ -32,19 +32,37 @@
 - maximum 2 can be Google Cloud API
 - description of project: webpage which show famous YouTube videos and their description in many languages
 
-- our services:
+- technologies used:
+
+    - backend:
+    
+        - Python
+        - Flask
+
+    - frontend:
+    
+        - Vue.js
 
     - services:
 
-        - [Cloud SQL](https://console.cloud.google.com/sql/choose-instance-engine?invt=Abt9Bg&project=proiect-cloudcomputing) - database (MySQL)
-        - [Cloud Run](https://console.cloud.google.com/run?invt=Abt8_w&project=proiect-cloudcomputing) - deployment
-        - [Firebase - Vertex AI](https://console.firebase.google.com/u/0/project/proiect-cloudcomputing/genai) - generating text from video
-    
-    - APIs:
+        - general:
 
-        - [Cloud Translation API](https://console.cloud.google.com/apis/library/translate.googleapis.com?invt=Abt9DA&project=skilled-mile-455515-t8) - translation
-        - [YouTube API](https://console.cloud.google.com/apis/library/youtube.googleapis.com?invt=Abt9HA&project=skilled-mile-455515-t8) - YouTube video insertion
+            - [Cloud SQL (Database Service)](https://console.cloud.google.com/sql/choose-instance-engine?invt=Abt9Bg&project=proiect-cloudcomputing)
+            - [Cloud Run (Backend Service, Deployment)](https://console.cloud.google.com/run?invt=Abt8_w&project=proiect-cloudcomputing)
+            - [Firebase Hosting (Frontend Service)](https://console.cloud.google.com/firebase?invt=Abt9vw&project=proiect-cloudcomputing)
+        
+        - APIs:
 
+            - [Cloud Translation API](https://console.cloud.google.com/apis/library/translate.googleapis.com?invt=Abt9DA&project=skilled-mile-455515-t8) - translation
+            - [YouTube API](https://console.cloud.google.com/apis/library/youtube.googleapis.com?invt=Abt9HA&project=skilled-mile-455515-t8) - YouTube video insertion
+
+
+### How to Set Up
+
+- install Node.js and npm
+- install Python and pip
+- install Google Cloud CLI, enter the consolde and sign in into the Google account
+- install Firebase CLI: npm install -g firebase-tools
 
 ### How to Run
 
@@ -55,3 +73,13 @@
 
 - the tutorials from the standard environment
 - install Google Cloud CLI
+
+
+### Work done by Tudor
+
+- 
+
+
+### Work done by X
+
+- 

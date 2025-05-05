@@ -126,11 +126,24 @@
 - install Google Cloud CLI
 
 
-### Work done by Tudor
 
-- 
+# Homework 4
 
+## Details
 
-### Work done by X
+- Azure Subscription ID: 15bf7f47-96e2-4be2-8464-0beade54756b
+- Server Name: sql-booklib-ne.database.windows.net
+- Server User: myadmin
+- Server Password: p67ff3!!
+- Database: db_booklib
+- Resource Group Name: rg-booklib
 
-- 
+- Login to Azure: az login
+- az account list --output table
+
+- Activate venv in backend: .\venv\Scripts\Activate.ps1
+- Run Backend: python app.py
+- Run Backend: http://localhost:5000/books, http://127.0.0.1:5000/
+
+- Run Frontend: serve -s .
+- Run FrontEnd: http://localhost:3000/

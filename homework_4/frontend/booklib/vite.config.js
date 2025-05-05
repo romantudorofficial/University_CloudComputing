@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -18,6 +17,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/ping': 'http://localhost:5000',  // Match exactly your Flask route
+      '/books': 'http://localhost:5000',  // Proxy for books API
     },
   },
 })

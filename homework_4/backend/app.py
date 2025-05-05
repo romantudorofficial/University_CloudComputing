@@ -1,14 +1,12 @@
 import os
 import pyodbc
 from flask import Flask, request, jsonify
-
 from flask_cors import CORS
-app = Flask(__name__)
-CORS(app)   # <— this allows all origins by default
 
+app = Flask(__name__)
+CORS(app)  # This allows all origins by default
 
 # Read your full Azure SQL connection string from an env var
-# e.g. set in Azure App Service as SQL_CONN_STR
 conn_str = os.getenv("SQL_CONN_STR")
 if not conn_str:
     raise RuntimeError("Please set the SQL_CONN_STR environment variable.")
@@ -46,9 +44,5 @@ def books():
 def ping():
     return "Backend is alive!"
 
-
-
 if __name__ == "__main__":
-    # local dev: set your connection string, then:
-    #   $env:SQL_CONN_STR="<your-azure-sql-conn>"; python app.py
     app.run(host="0.0.0.0", port=5000)

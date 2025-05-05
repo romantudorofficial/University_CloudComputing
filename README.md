@@ -145,5 +145,5 @@
 - Run Backend: python app.py
 - Run Backend: http://localhost:5000/books, http://127.0.0.1:5000/
 
-- Run Frontend: serve -s .
-- Run FrontEnd: http://localhost:3000/
+- Run Frontend: enter booklib and "npm run dev"
+- Run FrontEnd: http://localhost:5173/

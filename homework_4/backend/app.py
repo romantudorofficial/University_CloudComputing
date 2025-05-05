@@ -41,6 +41,13 @@ def books():
     )
     return jsonify({"status":"created"}), 201
 
+
+@app.route("/ping")
+def ping():
+    return "Backend is alive!"
+
+
+
 if __name__ == "__main__":
     # local dev: set your connection string, then:
     #   $env:SQL_CONN_STR="<your-azure-sql-conn>"; python app.py

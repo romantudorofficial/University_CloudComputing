@@ -136,7 +136,11 @@
 - Server User: myadmin
 - Server Password: p67ff3!!
 - Database: db_booklib
+- Storage account name: booklibstorage
 - Resource Group Name: rg-booklib
+
+- Services:
+    - Azure Blob Storage: for storing images about the books
 
 - Login to Azure: az login
 - az account list --output table

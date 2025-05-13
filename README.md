@@ -151,3 +151,12 @@
 
 - Run Frontend: enter booklib and "npm run dev"
 - Run FrontEnd: http://localhost:5173/
+
+
+# Homework 5
+
+## Details
+
+- [Google Docs](https://docs.google.com/document/d/1L7iReFzSX7P0EVzTikkht936jbWATc_edEz8Oukzf7M/edit?tab=t.0#heading=h.kpzdaztrb40i)
+- [Google Forms](https://docs.google.com/forms/d/1_7UPnVG13WCS6NKMq6XNo0OmozkR8YxadX8SzsblLTY/edit)
+- [Canva Business Canvas](https://www.canva.com/design/DAGnVVVxPO0/E8essRQE8k-k2am5-I91bg/edit?utm_content=DAGnVVVxPO0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)

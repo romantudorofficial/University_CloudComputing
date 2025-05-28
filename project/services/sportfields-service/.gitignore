@@ -1,0 +1,4 @@
+# services/sportfields-service/.gitignore
+.venv/
+__pycache__/
+*.py[cod]

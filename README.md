@@ -153,6 +153,7 @@
 - Run FrontEnd: http://localhost:5173/
 
 
+
 # Homework 5
 
 ## Details
@@ -160,3 +161,63 @@
 - [Google Docs](https://docs.google.com/document/d/1L7iReFzSX7P0EVzTikkht936jbWATc_edEz8Oukzf7M/edit?tab=t.0#heading=h.kpzdaztrb40i)
 - [Google Forms](https://docs.google.com/forms/d/1_7UPnVG13WCS6NKMq6XNo0OmozkR8YxadX8SzsblLTY/edit)
 - [Canva Business Canvas](https://www.canva.com/design/DAGnVVVxPO0/E8essRQE8k-k2am5-I91bg/edit?utm_content=DAGnVVVxPO0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+
+
+# Project
+
+## Details
+
+- cloud platform: Azure
+- Technologies: Azure, JavaWebToken
+- resource group name: projectCC
+- MySQL flexible server (all databases):
+    - name: db-server-cc 
+    - administrator login: adminsql
+    - password: adminsql25!
+    - estimated cost: USD 17/month
+- API Management service:
+    - name: apim-projectcc
+    - org name: team
+    - pricing tear: Developer
+- Application Service Plan:
+    - name: plan-projectcc
+    - os: linux
+    - pricing plan: Basic B1
+- WebApp for every microservice:
+    - authentication service web app:
+        - name: auth-service-cc
+        - runtime stack: Python 3.12
+        - db for authentication service:
+            - name: authdb
+            - char set: utf8
+            - collation: utf8_general_ci
+    - events service webapp:
+        - name: events-service
+        - runtime stack: Python 3.12
+        - db for events service:
+            - name: eventsdb
+            - char set: utf8
+            - collation: utf8_general_ci
+    - centralize sport fields service
+    - authorization service
+    - manual verification service
+- JavaWebToken:
+    - secret: iFrnhMbRyUn02DjHydSNqmGhrHY4S_5JAU9RkLKtYdXI26KxKsXcj-999ms8u5tC
+- types of users:
+    - simple
+    - owner
+- connection strings:
+Connection string for authdb:
+Server=db-server-cc.mysql.database.azure.com;
+Database=authdb;
+User ID=adminsql@db-server-cc;
+Password=adminsql25!;
+SslMode=Required;
+
+Connection string for eventsdb:
+Server=db-server-cc.mysql.database.azure.com;
+Database=eventsdb;
+User ID=adminsql@db-server-cc;
+Password=adminsql25!;
+SslMode=Required;

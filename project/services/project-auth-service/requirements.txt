@@ -1,7 +1,16 @@
+# for the async HTTP server
 fastapi
 uvicorn[standard]
+
+# for loading the .env file
 python-dotenv
+
+# for the MySQL ORM
 PyMySQL
 SQLAlchemy
+
+# for the JWT encoding/decoding
 python-jose
+
+# for the secure password hashing
 passlib[bcrypt]

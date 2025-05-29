@@ -36,7 +36,7 @@ def get_user_by_email (db: Session, email: str):
 
 
 
-def create_user (db: Session, user: schemas.UserCreate):
+def create_user (db: Session, user: schemas.UserCreate, is_owner: bool = False):
 
     '''
         Create a new user in the database.
@@ -48,13 +48,33 @@ def create_user (db: Session, user: schemas.UserCreate):
     '''
 
     # Check if the username or email already exists.
+    # hashed_pw = get_password_hash(user.password)
+    # db_user = models.User(username = user.username, email = user.email, hashed_password = hashed_pw)
+    # db.add(db_user)
+    # db.commit()
+    # db.refresh(db_user)
+
+    # # Commit the changes to the database and refresh the user object.
+    # return db_user
     hashed_pw = get_password_hash(user.password)
-    db_user = models.User(username = user.username, email = user.email, hashed_password = hashed_pw)
+    # def _create(is_owner: bool = False):
+    #     return models.User(
+    #         username = user.username,
+    #         email = user.email,
+    #         hashed_password = hashed_pw,
+    #         is_owner = is_owner
+    #     )
+    # # use the helper so signature stays backward-compatible
+    # db_user = _create(is_owner=getattr(user, "is_owner", False))
+    db_user = models.User(
+        username=user.username,
+        email=user.email,
+        hashed_password=hashed_pw,
+        is_owner=is_owner
+    )
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
-
-    # Commit the changes to the database and refresh the user object.
     return db_user
 
 

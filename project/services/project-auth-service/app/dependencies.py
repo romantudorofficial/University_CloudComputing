@@ -4,8 +4,10 @@ from sqlalchemy.orm import Session
 from app.core.config import settings
 from app.database import SessionLocal
 from app.schemas import TokenPayload
+from app.models import *
+from fastapi.security import OAuth2PasswordBearer
 
-
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 def get_db ():
 
@@ -30,7 +32,7 @@ def get_db ():
 
 
 
-def get_current_user (token: str = Depends(...), db: Session = Depends(get_db)):
+def get_current_user (token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):
 
     '''
         Dependency to get the current user from the JWT token.
@@ -58,7 +60,8 @@ def get_current_user (token: str = Depends(...), db: Session = Depends(get_db)):
         raise credentials_exception
     
     # Query the database to find the user by username from the token payload.
-    user = db.query(models.User).filter(models.User.username == token_data.sub).first()
+    # user = db.query(models.User).filter(models.User.username == token_data.sub).first()
+    user = db.query(models.User).filter(models.User.id == int(token_data.sub)).first()
     
     # If the user is not found, raise an HTTP exception.
     if user is None:

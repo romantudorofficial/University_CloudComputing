@@ -14,6 +14,7 @@ class UserCreate (BaseModel):
     username: str
     email: EmailStr
     password: str
+    is_owner: bool = False
 
 
 
@@ -56,7 +57,11 @@ class Token (BaseModel):
     refresh_token: str
     token_type: str = "bearer"
 
-
+class TokenRefresh(BaseModel):
+    """
+       Schema for a refresh‐token request.
+    """
+    refresh_token: str
 
 class TokenPayload (BaseModel):
 
